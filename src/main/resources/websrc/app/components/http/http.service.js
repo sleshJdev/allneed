@@ -30,6 +30,18 @@ class HttpService {
         });
     }
 
+    static remove(url, data) {
+        return new Promise((resolve, reject) => {
+            $.ajax({
+                method: 'DELETE',
+                url: url,
+                data: data,
+                success: resolve,
+                error: reject
+            });
+        });
+    }
+
 }
 
 export default HttpService

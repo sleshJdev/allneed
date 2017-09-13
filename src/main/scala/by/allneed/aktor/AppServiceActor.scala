@@ -75,7 +75,7 @@ trait AppServiceRoutes extends HttpService {
     } ~ path("") {
       getFromResource("webapp/index.html", `text/html`)
     } ~ {
-      getFromResourceDirectory("web")
+      getFromResourceDirectory("webapp")
     }
 
 }

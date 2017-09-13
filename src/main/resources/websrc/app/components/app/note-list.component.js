@@ -12,11 +12,17 @@ class NoteList extends Component {
     }
 
     componentWillReceiveProps(props) {
-        HttpService.get('/api/notes', {city: props.city}).then(notes => {
-            this.setState(() => ({
-                notes: notes
-            }));
-        });
+        this.fetchNotes(props.city);
+    }
+
+    fetchNotes(city) {
+        HttpService.get('/api/notes', {city: city}).then(notes =>
+            this.setState(() => ({notes: notes})));
+    }
+
+    removeNote(noteId) {
+        HttpService.remove('/api/notes', {id: noteId}).then(() =>
+            this.fetchNotes(this.props.city))
     }
 
     render() {
@@ -24,11 +30,16 @@ class NoteList extends Component {
             <div className="list-group">
                 {
                     this.state.notes.map((note) => (
-                        <a key={note.id} href="#" className="list-group-item list-group-item-action flex-column align-items-start">
+                        <a key={note.id} href="#"
+                           className="list-group-item list-group-item-action flex-column align-items-start">
                             <div className="d-flex w-100 justify-content-between">
-                                <small>{note.createdOn}</small>
+                                <span className="glyphicon glyphicon-remove-sign"
+                                      onClick={() => this.removeNote(note.id)}/>
                             </div>
                             <p className="mb-1">{note.text}</p>
+                            <small className="text-muted">
+                                {note.createdAt}
+                            </small>
                         </a>
                     ))
                 }

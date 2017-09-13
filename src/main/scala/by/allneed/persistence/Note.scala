@@ -42,10 +42,9 @@ object Notes {
 
   def findByCity(city: String): Future[Seq[Note]] = db.run(model.filter(_.city === city).result)
 
-  def insert(note: Note): Future[Long] = {
-    db.run(model returning model.map(_.id) += note)
-  }
+  def insert(note: Note): Future[Long] = db.run(model returning model.map(_.id) += note)
 
   def findAll(): Future[Seq[Note]] = db.run(model.result)
 
+  def remove(id: Long): Future[Int] = db.run(model.filter(_.id === id).delete)
 }
