@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import HttpService from "../http/http.service";
+import HttpService from "../../service/http.service";
 
 class NoteList extends Component {
 
