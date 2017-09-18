@@ -49,7 +49,7 @@ trait NoteServiceRoutes extends HttpService {
           }
         }
       } ~ delete {
-        formField('id.as[Long]) { id =>
+        parameter('id.as[Long]) { id =>
           onComplete(OnCompleteFutureMagnet(Notes.remove(id))) {
             case Success(affected) => complete(OK)
             case Failure(exception) =>

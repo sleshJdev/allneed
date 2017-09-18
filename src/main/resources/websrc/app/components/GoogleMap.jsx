@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import GoogleMapService from './google-map.service';
-import config from '../../conf/app.config.json';
+import GoogleMapService from '../service/GoogleMapService';
+import config from '../conf/app.config.json';
 
 class GoogleMap extends Component {
 
