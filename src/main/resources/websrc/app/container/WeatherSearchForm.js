@@ -1,7 +1,7 @@
 import {connect} from "react-redux";
 import moment from 'moment';
 
-import WeatherSearchForm from '../components/WeatherSearchForm';
+import WeatherSearchForm from '../component/dashboard/WeatherSearchForm';
 import {fetchNotes, fetchWeatherInfo, saveNote, updateCityTitleForSearch} from "../actions/index";
 
 export default connect(state => ({

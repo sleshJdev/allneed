@@ -1,7 +1,7 @@
 import {connect} from "react-redux";
 
 import {deleteNote} from "../actions/index";
-import NoteList from "../components/NoteList";
+import NoteList from "../component/dashboard/NoteList";
 
 export default connect(state => ({
     cityTitle: state.cityTitle,

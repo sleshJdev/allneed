@@ -1,7 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
 
-import App from './containers/App';
+import App from './container/App';
 
 import 'jquery'
 import 'bootstrap/dist/js/bootstrap'

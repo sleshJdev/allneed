@@ -1,6 +1,6 @@
 import {connect} from "react-redux";
 
-import WeatherInfoTable from '../components/WeatherInfoTable'
+import WeatherInfoTable from '../component/dashboard/WeatherInfoTable'
 
 export default connect(state => {
     return {
