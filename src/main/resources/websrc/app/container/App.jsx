@@ -9,6 +9,7 @@ import reducer from '../reducer/index';
 
 import Dashboard from "../views/Dashboard";
 import Settings from "../views/Settings";
+import Header from "../views/Header";
 
 const store = createStore(
     reducer,
@@ -22,6 +23,7 @@ export default () => (
     <Provider store={store}>
         <HashRouter>
             <div className="container-fluid">
+                <Header/>
                 <Route exact path="/" component={Dashboard}/>
                 <Route path="/settings" component={Settings}/>
             </div>
